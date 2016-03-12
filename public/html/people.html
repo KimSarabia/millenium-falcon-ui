@@ -1,0 +1,25 @@
+<h1>People</h1>
+
+<ul>
+  <li ng-repeat='person in people'>{{person.name}}</li>
+</ul>
+
+<h1> Page: {{page}} </h1>
+
+<nav>
+  <ul class = "pagination">
+    <li ng-class='{disabled: page <= 1}'>
+      <a ng-click = 'goToPage(page - 1)' aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li ng-repeat='num in pageNumbers track by $index'>
+      <a ng-click='goToPage(page)'>{{num}}</a>
+    </li>
+    <li ng-class='{disabled: page >= pageNumbers.length}'>
+      <a ng-click='goToPage(page + 1)' aria-label="Next">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
